@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="-10dp"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"
+        android:elevation="2dp"
+        app:cardCornerRadius="10dp">
+
+        <TextView
+            android:id="@+id/more_info_title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="Price Insight"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/main_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/bhk_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/spinner_bg"
+                android:padding="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/total_sq_ft_layout"
+                app:layout_constraintTop_toBottomOf="@+id/bhk_imageview"
+                app:layout_goneMarginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/bathroom_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/spinner_bg"
+                android:padding="6dp"
+                app:layout_constraintEnd_toStartOf="@+id/yearsold_spinner"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bathroom_imageView"
+                app:layout_goneMarginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/condition_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/spinner_bg"
+                android:padding="6dp"
+                app:layout_constraintEnd_toStartOf="@+id/balcony_spinner"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/bathroom_dropdown"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/condition_imageView"
+                app:layout_goneMarginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/yearsold_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/spinner_bg"
+                android:padding="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/bathroom_spinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/bathroom_spinner"
+                app:layout_constraintTop_toTopOf="@+id/bathroom_spinner"
+                app:layout_goneMarginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/balcony_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/spinner_bg"
+                android:padding="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/condition_spinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/condition_spinner"
+                app:layout_constraintTop_toTopOf="@+id/condition_spinner"
+                app:layout_goneMarginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/property_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/spinner_bg"
+                android:padding="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/property_imageView"
+                app:layout_goneMarginEnd="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/total_sq_ft_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="4dp"
+                android:textColorHint="@color/colorPrimary"
+                android:theme="@style/TextBox"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:errorIconDrawable="@null"
+                app:layout_constraintBottom_toBottomOf="@+id/bhk_spinner"
+                app:layout_constraintEnd_toStartOf="@+id/bhk_spinner"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/living_area_layout"
+                app:layout_constraintVertical_bias="1.0">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/total_sq_ft_text_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawableStart="@drawable/ic_total_sq"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="Total Sq.Ft"
+                    android:maxLength="4"
+                    android:inputType="number"
+                    android:padding="16dp"
+                    android:singleLine="true"
+                    android:textColor="#000000" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/locality_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:textColorHint="@color/colorPrimary"
+                android:theme="@style/TextBox"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:errorIconDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/locality_textbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:drawableStart="@drawable/ic_gps_fixed_black_24dp"
+                    android:drawablePadding="8dp"
+                    android:enabled="true"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="Enter Locality or Area"
+                    android:padding="16dp"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textColorHint="#ffffff" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/floor_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:textColorHint="@color/colorPrimary"
+                android:theme="@style/TextBox"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:errorIconDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/living_area_layout"
+                app:layout_constraintTop_toBottomOf="@+id/property_type">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/floor_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawableStart="@drawable/ic_tube_stairs"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/open_sans"
+                    android:maxLength="2"
+                    android:hint="Floor"
+                    android:inputType="number"
+                    android:padding="16dp"
+                    android:singleLine="true"
+                    android:textColor="#000000" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/living_area_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="4dp"
+                android:textColorHint="@color/colorPrimary"
+                android:theme="@style/TextBox"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:errorIconDrawable="@null"
+                app:layout_constraintEnd_toStartOf="@+id/floor_layout"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/property_type">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/living_area_text_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawableStart="@drawable/ic_living_area"
+                    android:drawablePadding="8dp"
+                    android:maxLength="4"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="Living Area(SqFt)"
+
+                    android:inputType="number"
+                    android:padding="16dp"
+                    android:singleLine="true"
+                    android:textColor="#000000" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/property_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Property Type"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/property_imageView"
+                app:layout_constraintStart_toEndOf="@+id/property_imageView"
+                app:layout_constraintTop_toTopOf="@+id/property_imageView" />
+
+            <TextView
+                android:id="@+id/bathroom_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Bathrooms"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/bathroom_imageView"
+                app:layout_constraintStart_toEndOf="@+id/bathroom_imageView"
+                app:layout_constraintTop_toTopOf="@+id/bathroom_imageView" />
+
+            <TextView
+                android:id="@+id/condition_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Condition(Raiting)"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/condition_imageView"
+                app:layout_constraintStart_toEndOf="@+id/condition_imageView"
+                app:layout_constraintTop_toTopOf="@+id/condition_imageView" />
+
+            <TextView
+                android:id="@+id/yearsold_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Years Old"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/yearsold_imageView"
+                app:layout_constraintStart_toEndOf="@+id/yearsold_imageView"
+                app:layout_constraintTop_toTopOf="@+id/yearsold_imageView" />
+
+            <TextView
+                android:id="@+id/bhk_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="BHK"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/bhk_imageview"
+                app:layout_constraintStart_toEndOf="@+id/bhk_imageview"
+                app:layout_constraintTop_toTopOf="@+id/bhk_imageview" />
+
+            <TextView
+                android:id="@+id/balcony_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="No of balcony"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/balcony_imageView"
+                app:layout_constraintStart_toEndOf="@+id/balcony_imageView" />
+
+            <ImageView
+                android:id="@+id/property_imageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@+id/locality_layout"
+                app:layout_constraintTop_toBottomOf="@+id/locality_layout"
+                app:srcCompat="@drawable/ic_appartment" />
+
+            <ImageView
+                android:id="@+id/bathroom_imageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@+id/living_area_layout"
+                app:layout_constraintTop_toBottomOf="@+id/bhk_spinner"
+                app:srcCompat="@drawable/ic_bathtub" />
+
+            <ImageView
+                android:id="@+id/condition_imageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="@+id/bathroom_spinner"
+                app:layout_constraintTop_toBottomOf="@+id/bathroom_spinner"
+                app:srcCompat="@drawable/ic_housecondition" />
+
+            <ImageView
+                android:id="@+id/yearsold_imageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/bathroom_imageView"
+                app:layout_constraintStart_toStartOf="@+id/yearsold_spinner"
+                app:srcCompat="@drawable/ic_hourglass_empty_24px" />
+
+            <ImageView
+                android:id="@+id/bhk_imageview"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@+id/bhk_spinner"
+                app:layout_constraintTop_toBottomOf="@+id/floor_layout"
+                app:srcCompat="@drawable/ic_floorplan" />
+
+            <ImageView
+                android:id="@+id/balcony_imageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/condition_imageView"
+                app:layout_constraintStart_toStartOf="@+id/balcony_spinner"
+                app:srcCompat="@drawable/ic_balcony" />
+
+            <ImageView
+                android:id="@+id/propery_dropdown"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="16dp"
+                android:rotation="90"
+                app:layout_constraintBottom_toBottomOf="@+id/property_type"
+                app:layout_constraintEnd_toEndOf="@+id/property_type"
+                app:layout_constraintTop_toTopOf="@+id/property_type"
+                app:srcCompat="@drawable/ic_right_arrow" />
+
+            <ImageView
+                android:id="@+id/bhk_dropdown"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="16dp"
+                android:rotation="90"
+                app:layout_constraintBottom_toBottomOf="@+id/bathroom_spinner"
+                app:layout_constraintEnd_toEndOf="@+id/bathroom_spinner"
+                app:layout_constraintTop_toTopOf="@+id/bathroom_spinner"
+                app:srcCompat="@drawable/ic_right_arrow" />
+
+            <ImageView
+                android:id="@+id/bathroom_dropdown"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="16dp"
+                android:rotation="90"
+                app:layout_constraintBottom_toBottomOf="@+id/condition_spinner"
+                app:layout_constraintEnd_toEndOf="@+id/condition_spinner"
+                app:layout_constraintTop_toTopOf="@+id/condition_spinner"
+                app:srcCompat="@drawable/ic_right_arrow" />
+
+            <ImageView
+                android:id="@+id/bathroom_dropdown2"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="16dp"
+                android:rotation="90"
+                app:layout_constraintBottom_toBottomOf="@+id/balcony_spinner"
+                app:layout_constraintEnd_toEndOf="@+id/balcony_spinner"
+                app:layout_constraintTop_toTopOf="@+id/balcony_spinner"
+                app:srcCompat="@drawable/ic_right_arrow" />
+
+            <ImageView
+                android:id="@+id/years_dropdown"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="16dp"
+                android:rotation="90"
+                app:layout_constraintBottom_toBottomOf="@+id/yearsold_spinner"
+                app:layout_constraintEnd_toEndOf="@+id/yearsold_spinner"
+                app:layout_constraintTop_toTopOf="@+id/yearsold_spinner"
+                app:srcCompat="@drawable/ic_right_arrow" />
+
+            <ImageView
+                android:id="@+id/years_dropdown2"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="16dp"
+                android:rotation="90"
+                app:layout_constraintBottom_toBottomOf="@+id/bhk_spinner"
+                app:layout_constraintEnd_toEndOf="@+id/bhk_spinner"
+                app:layout_constraintTop_toTopOf="@+id/bhk_spinner"
+                app:srcCompat="@drawable/ic_right_arrow" />
+
+            <Button
+                android:id="@+id/estimatePriceButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/button_bg"
+                android:padding="15dp"
+                android:text="Estimate Price"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moreinfo_textview"
+                app:layout_goneMarginTop="8dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:text="Your Estimated price as per your preference is "
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/condition_spinner" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="24dp"
+                android:text="₹ - @ ₹ - /Sq.Ft"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/moreinfo_textview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                app:layout_goneMarginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/moreinfo_textview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:fitsSystemWindows="true"
+                android:padding="5dp"
+                android:text="More Info>>"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/estimatePriceButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <com.victor.loading.rotate.RotateLoading
+                android:id="@+id/rotateLoading"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/moreinfo_textview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</LinearLayout>
