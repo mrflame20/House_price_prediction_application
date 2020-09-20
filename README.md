@@ -4,6 +4,7 @@
 * [General info](#general-info)
 * [Abstract](#abstract)
 * [Technologies](#technologies)
+* [Screenshots](#images)
 
 ## General info
 I developed and evaluated the performance and the predictive power  of a model trained and tested on data collected from different sources.This application takes different decisive parameters as input and estimates the price based on those as output.
@@ -16,3 +17,11 @@ to use algorithms to decide the price of a house. There is a need for a Machine 
 * Machine Learning
 * Neural Network
 * Android (Java)
+
+## Screenshots
+<p float="left">
+  <img src="/images/Screenshot_20200730-101449_SSIP.jpg" width="225" height="500"/>
+  <img src="/images/Screenshot_20200730-101501_SSIP.jpg" width="225" height="500"/>
+  <img src="/images/Screenshot_20200730-101543_SSIP.jpg" width="225" height="500"/>
+  <img src="/images/Screenshot_20200730-101556_SSIP.jpg" width="225" height="500"/>
+</p3
