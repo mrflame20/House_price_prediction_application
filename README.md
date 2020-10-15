@@ -20,7 +20,7 @@ to use algorithms to decide the price of a house. There is a need for a Machine 
 
 ## Screenshots
 <p float="left">
-  <img src="/images/Screenshot_20200730-101449_SSIP.jpg" width="225" height="500" hspace="30"/>
+  <img src="/images/Screenshot_20200730-101449_SSIP.jpg" width="225" height="500" hspace="29"/>
   <img src="/images/Screenshot_20200730-101501_SSIP.jpg" width="225" height="500" hspace="30"/>
   <img src="/images/Screenshot_20200730-101543_SSIP.jpg" width="225" height="500" hspace="30"/>
   <img src="/images/Screenshot_20200730-101556_SSIP.jpg" width="225" height="500" hspace="30"/>
